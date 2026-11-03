@@ -21,6 +21,8 @@
 - 📝 **Sous-titres** : Conversion des sous-titres (sauf VobSub/PGS) au format Cappella (`.dext`).
 - 🎬 **Vidéos de référence** : Préparation d'une vidéo en VO / VOSTFR (sous-titres incrustés) pour la direction artistique et les comédiens.
 
+Pour continuer à faire vivre les comédiens de doublage : https://www.change.org/p/pour-un-doublage-créé-par-des-humains-pour-des-humains-touchepasmavf-beab56eb-a759-4117-b77c-7d03bcaa35f8
+
 ---
 
 ## ⚙️ Installation
