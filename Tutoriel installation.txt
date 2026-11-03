@@ -1,0 +1,65 @@
+# EasyCap v1.0 — installation pour le public (Windows 10/11)
+
+Les commandes suivantes sont à exécuter dans **PowerShell** (ou Terminal Windows).
+
+## 1\. Installer les deux programmes nécessaires
+
+```powershell
+winget install --id Python.Python.3.12 --exact --accept-package-agreements --accept-source-agreements
+winget install --id Gyan.FFmpeg --exact --accept-package-agreements --accept-source-agreements
+```
+
+**Fermer et rouvrir PowerShell** après l'installation pour actualiser le PATH.
+
+
+## 2\. Vérifier les installations
+
+```powershell
+py -3.12 --version
+ffmpeg -version
+ffprobe -version
+py -3.12 -m tkinter
+```
+
+La dernière commande ouvre une petite fenêtre de test Tkinter. **Tkinter fait partie de Python sur Windows ; ne pas exécuter `pip install tkinter`.**
+
+
+## 3\. Installer les deux modules Python d'EasyCap
+
+Après extraction de l'archive, ouvrir PowerShell dans le dossier `EasyCap` (celui qui contient `requirements.txt`) :
+
+```powershell
+py -3.12 -m pip install --upgrade pip
+py -3.12 -m pip install -r requirements.txt
+```
+
+Équivalent explicite :
+
+```powershell
+py -3.12 -m pip install "tkinterdnd2>=0.4.2" "Pillow>=10.0"
+```
+
+* `tkinterdnd2` : glisser-déposer dans l'interface ;
+* `Pillow` : chargement et affichage du logo.
+
+Les bibliothèques `pathlib`, `subprocess`, `threading`, `tkinter`, `xml`, etc. sont incluses dans l'installation standard de Python. Elles ne s'installent pas séparément via pip.
+
+
+## 4\. Démarrer EasyCap directement si nécessaire
+
+```powershell
+py -3.12 EasyCap.py
+```
+
+Ou double-cliquer sur `EasyCap.bat`.
+
+## Vérifier les filtres utiles FFmpeg
+
+```powershell
+ffmpeg -hide\_banner -encoders | findstr /i "libx264 mpeg4 libmp3lame flac aac"
+ffmpeg -hide\_banner -filters | findstr /i "subtitles zscale tonemap overlay"
+```
+
+La version de FFmpeg doit inclure les composants nécessaires aux options que vous utilisez (notamment `libass`, `libx264` et les filtres HDR). Sous-titres bitmap PGS/VobSub : traitement expérimental selon la source.
+
+**Aucune installation de Node.js, Java, CUDA, PyTorch ou Whisper n'est nécessaire.**
