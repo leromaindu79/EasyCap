@@ -39,7 +39,7 @@ ROOTDIR = Path(__file__).resolve().parent
 class EasyCapApp(BASE):
     def __init__(self):
         super().__init__()
-        self.title('EasyCap v2.9 — Préparation intégrale de bande rythmo')
+        self.title('EasyCap v1.0 — Préparation intégrale de bande rythmo')
         self.geometry('1040x850')
         self.minsize(790, 675)
         self.configure(bg=BG)
